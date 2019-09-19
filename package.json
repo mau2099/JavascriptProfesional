@@ -1,0 +1,25 @@
+{
+  "name": "Playground_Ejs-Samples",
+  "version": "1.0.0",
+  "description": "Proyecto con los ejercicios vistos en Js",
+  "main": "index.js",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kreuk2099/Playground_Ejs-Samples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kreuk2099/Playground_Ejs-Samples/issues"
+  },
+  "homepage": "https://github.com/kreuk2099/Playground_Ejs-Samples#readme"
+}
