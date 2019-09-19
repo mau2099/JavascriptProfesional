@@ -14,7 +14,8 @@
   header {
     text-align: center;
     padding: 3rem 0;
-    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    background-image: linear-gradient(120deg, #22E322 0%, #00A700 50%, #0E670E 100%);
+    /* background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); */
     color: white;
   }
   
