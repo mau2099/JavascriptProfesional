@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Abort Fetch</title>
+    <link rel="stylesheet" href="/src/02-css/index.css">
+  </head>
+
+  <body>
+    <a href="/src/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <pre>
+        <code>
+  * Al abrir la consola cambiar el modo de conexion a Fast 3G o Slow 3G.
+  Esto hará que tarde en carga la imagen. 
+  
+  * Al hacer click en Stop se abortará el fetch
+        </code>
+      </pre>
+    <img id="huge-image" height="300px" />
+
+    <button id="load">Load HUGE Image</button>
+    <button id="stop" disabled>Stop Fetching</button>
+
+    <script>
+      const url ='https://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100';
+      const img = document.getElementById('huge-image');
+      const loadButton = document.getElementById('load');
+      const stopButton = document.getElementById('stop');
+      let controller;
+
+      function startLoading() {
+        loadButton.disabled = true;
+        loadButton.innerText = 'Loading...';
+        stopButton.disabled = false;
+      }
+
+      function stopLoading() {
+        loadButton.disabled = false;
+        loadButton.innerText = 'Load HUGE Image';
+        stopButton.disabled = true;
+      }
+
+      loadButton.onclick = async function() {
+        startLoading();
+
+        controller = new AbortController();
+
+        try {
+          const response = await fetch(url, { signal: controller.signal });
+          const blob = await response.blob();
+          const imgUrl = URL.createObjectURL(blob);
+          img.src = imgUrl;
+        } catch (error) {
+          console.log(error.message);
+        }
+
+        stopLoading();
+      };
+
+      stopButton.onclick = function() {
+        controller.abort();
+        stopLoading();
+      };
+    </script>
+  </body>
+</html>
