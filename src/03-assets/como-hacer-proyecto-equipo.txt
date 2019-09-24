@@ -1,0 +1,9 @@
+que
+quien 
+como lo vamos a lograr (experiencia de usuario y diseño)
+	que sea rapido, facil e intuitivo
+		waterfall - planear la totalidad del producto
+		funcionalidad minima -> mbp
+			obtener datos de lo que estan los usuarios para iterar e ir mejorando la informacion
+
+Product Manager
